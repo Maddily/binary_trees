@@ -1,7 +1,5 @@
 #include "binary_trees.h"
 
-size_t binary_tree_size_recursion(const binary_tree_t *tree);
-
 /**
  * binary_tree_size - Measures the size of a binary tree
  *
