@@ -73,6 +73,8 @@ int binary_tree_balance(const binary_tree_t *tree);
 int binary_tree_is_full(const binary_tree_t *tree);
 /* Checks if a binary tree is perfect */
 int binary_tree_is_perfect(const binary_tree_t *tree);
+/* Finds the sibling of a node */
+binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 
 void binary_tree_print(const binary_tree_t *tree);
 
