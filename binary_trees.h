@@ -59,12 +59,8 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
 /* Measures the height of a binary tree */
 size_t binary_tree_height(const binary_tree_t *tree);
-/* Recursive function to find height */
-size_t binary_tree_traverse_n_count_side(const binary_tree_t *tree);
 /* Measures the depth of a node in a binary tree */
 size_t binary_tree_depth(const binary_tree_t *tree);
-/* Recursive function to find depth */
-size_t binary_tree_traverse_n_count_depth(const binary_tree_t *tree);
 /* Measures the size of a binary tree */
 size_t binary_tree_size(const binary_tree_t *tree);
 /* Counts the leaves in a binary tree */
