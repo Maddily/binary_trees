@@ -110,6 +110,8 @@ bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
 /* Removes a node from a Binary Search Tree */
 bst_t *bst_remove(bst_t *root, int value);
+/* Checks if a binary tree is a valid AVL Tree */
+int binary_tree_is_avl(const binary_tree_t *tree);
 
 void binary_tree_print(const binary_tree_t *tree);
 
