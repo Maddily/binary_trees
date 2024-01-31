@@ -102,6 +102,8 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 /* Checks if a binary tree is a binary search tree */
 int binary_tree_is_bst(const binary_tree_t *tree);
+/* Inserts a value in a binary search tree */
+bst_t *bst_insert(bst_t **tree, int value);
 
 void binary_tree_print(const binary_tree_t *tree);
 
