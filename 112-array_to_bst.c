@@ -21,8 +21,6 @@ bst_t *array_to_bst(int *array, size_t size)
 		inserted_node = bst_insert(&tree, array[i]);
 		if (inserted_node == NULL)
 			return (NULL);
-		if (i == 0)
-			tree = inserted_node;
 	}
 
 	return (tree);
