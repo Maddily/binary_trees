@@ -10,7 +10,6 @@
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
-
 /**
  * struct binary_tree_s - Binary tree node
  *
@@ -38,6 +37,19 @@ typedef struct binary_tree_s avl_t;
 
 /*Max Binary Heap*/
 typedef struct binary_tree_s heap_t;
+
+/**
+ * struct listint_s - singly linked list
+ * @node: A pointer to a node in a binary tree
+ * @next: points to the next node in the list
+ *
+ * Description: singly linked list node structure
+ */
+typedef struct listint_s
+{
+	binary_tree_t *node;
+	struct listint_s *next;
+} listint_t;
 
 /* Creates a binary tree node */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
@@ -80,6 +92,8 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 /* Finds the lowest common ancestor of two nodes */
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	const binary_tree_t *second);
+/* Traverses a binary tree using level-order algorithm */
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 void binary_tree_print(const binary_tree_t *tree);
 
