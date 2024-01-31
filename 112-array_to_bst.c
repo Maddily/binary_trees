@@ -20,7 +20,7 @@ bst_t *array_to_bst(int *array, size_t size)
 	{
 		inserted_node = bst_insert(&tree, array[i]);
 		if (inserted_node == NULL)
-			return (NULL);
+			continue;
 	}
 
 	return (tree);
