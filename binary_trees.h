@@ -100,6 +100,8 @@ int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 /* Performs a right-rotation on a binary tree */
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+/* Checks if a binary tree is a binary search tree */
+int binary_tree_is_bst(const binary_tree_t *tree);
 
 void binary_tree_print(const binary_tree_t *tree);
 
