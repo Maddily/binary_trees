@@ -104,6 +104,8 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
 /* Inserts a value in a binary search tree */
 bst_t *bst_insert(bst_t **tree, int value);
+/* Builds a Binary Search Tree from an array */
+bst_t *array_to_bst(int *array, size_t size);
 
 void binary_tree_print(const binary_tree_t *tree);
 
