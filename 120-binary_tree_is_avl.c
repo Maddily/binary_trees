@@ -136,6 +136,6 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 	balance_factor = binary_tree_balance(tree);
 	if (balance_factor >= -1 && balance_factor <= 1)
 		return (binary_tree_is_avl(tree->left) && binary_tree_is_avl(tree->right));
-	else
-		return (0);
+
+	return (0);
 }
