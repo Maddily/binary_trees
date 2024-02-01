@@ -122,6 +122,8 @@ avl_t *sorted_array_to_avl(int *array, size_t size);
 int binary_tree_is_heap(const binary_tree_t *tree);
 /* Inserts a value in a Max Binary Heap */
 heap_t *heap_insert(heap_t **root, int value);
+/* Builds a Max Binary Heap tree from an array */
+heap_t *array_to_heap(int *array, size_t size);
 
 void binary_tree_print(const binary_tree_t *tree);
 
