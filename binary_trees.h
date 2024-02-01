@@ -120,6 +120,8 @@ avl_t *avl_remove(avl_t *root, int value);
 avl_t *sorted_array_to_avl(int *array, size_t size);
 /* Checks if a binary tree is a valid Max Binary Heap */
 int binary_tree_is_heap(const binary_tree_t *tree);
+/* Inserts a value in a Max Binary Heap */
+heap_t *heap_insert(heap_t **root, int value);
 
 void binary_tree_print(const binary_tree_t *tree);
 
