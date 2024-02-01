@@ -70,17 +70,18 @@ heap_t *heap_insert(heap_t **root, int value)
 {
 	heap_t *new_node, *parent;
 
-	new_node = binary_tree_node(NULL, value);
-	if (!new_node)
-		return (NULL);
-
 	if (!*root)
 	{
+		new_node = binary_tree_node(NULL, value);
+		if (!new_node)
+			return (NULL);
 		*root = new_node;
-		return (new_node);
+		return (*root);
 	}
 
 	parent = find_parent(*root);
+
+	new_node = binary_tree_node(parent, value);
 
 	if (!parent->left)
 		parent->left = new_node;
