@@ -21,7 +21,17 @@ heap_t *find_parent(heap_t *root)
 				return (root->left);
 			if (!root->right->left || !root->right->right)
 				return (root->right);
-			root = root->left;
+			if (root->left->left->left && root->left->left->right
+			&& root->left->right->left && root->left->right->right
+			&& (!root->right->left->left || !root->right->left->right
+			|| !root->right->right->left || !root->right->right->right))
+			{
+				root = root->right;
+			}
+			else
+			{
+				root = root->left;
+			}
 		}
 		else
 		{
