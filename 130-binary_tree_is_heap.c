@@ -53,13 +53,14 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_is_heap - Checks if a binary tree is a valid Max Binary Heap
+ * binary_tree_is_heap_helper - Checks if a binary tree
+ * is a valid Max Binary Heap
  *
  * @tree: A pointer to the root of a tree
  *
  * Return: 1 if it's a max binary heap, 0 otherwise
 */
-int binary_tree_is_heap(const binary_tree_t *tree)
+int binary_tree_is_heap_helper(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (1);
@@ -71,5 +72,21 @@ int binary_tree_is_heap(const binary_tree_t *tree)
 	if (!binary_tree_is_complete(tree))
 		return (0);
 
-	return (binary_tree_is_heap(tree->left) && binary_tree_is_heap(tree->right));
+	return (binary_tree_is_heap_helper(tree->left) &&
+		binary_tree_is_heap_helper(tree->right));
+}
+
+/**
+ * binary_tree_is_heap - Checks if a binary tree is a valid Max Binary Heap
+ *
+ * @tree: A pointer to the root of a tree
+ *
+ * Return: 1 if it's a max binary heap, 0 otherwise
+*/
+int binary_tree_is_heap(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (0);
+
+	return (binary_tree_is_heap_helper(tree));
 }
