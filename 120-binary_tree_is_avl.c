@@ -117,13 +117,13 @@ int binary_tree_balance(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_is_avl - Checks if a binary tree is a valid AVL Tree
+ * binary_tree_is_avl_helper - Checks if a binary tree is a valid AVL Tree
  *
  * @tree: A pointer to the root of a tree
  *
  * Return: 1 if it's a valid AVL tree, 0 otherwise
 */
-int binary_tree_is_avl(const binary_tree_t *tree)
+int binary_tree_is_avl_helper(const binary_tree_t *tree)
 {
 	int balance_factor;
 
@@ -135,7 +135,22 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 
 	balance_factor = binary_tree_balance(tree);
 	if (balance_factor >= -1 && balance_factor <= 1)
-		return (binary_tree_is_avl(tree->left) && binary_tree_is_avl(tree->right));
+		return (binary_tree_is_avl_helper(tree->left) && binary_tree_is_avl_helper(tree->right));
 
 	return (0);
+}
+
+/**
+ * binary_tree_is_avl - Checks if a binary tree is a valid AVL Tree
+ *
+ * @tree: A pointer to the root of a tree
+ *
+ * Return: 1 if it's a valid AVL tree, 0 otherwise
+*/
+int binary_tree_is_avl(const binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return (0);
+
+	return (binary_tree_is_avl_helper(tree));
 }
